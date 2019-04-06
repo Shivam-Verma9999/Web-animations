@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+  		Portfolio
+    </title>
+
+    <style>
+    	body,html{
+    		margin:0;
+    		padding: 0;
+    		overflow-x: hidden;
+    		font-family: Inconsolata;
+    		/*font-size: 40px;*/
+    	}
+    	.main{
+    		position: relative;
+    		height: 150px;
+    		margin-top:100px;
+    		overflow: hidden;
+       	}
+       	.cont{
+       		position: absolute;
+       		height: 100%;
+       		width:100%;
+       		display: flex;
+       		transition:all 0.7s ;
+
+       	}
+       	.text{
+       		margin: auto;
+       		font-weight: 100;
+       		text-align: center;
+       	}
+
+    </style>
+</head>
+
+<body>	
+
+	<div class="main" onmouseenter="play()" onmouseleave="revert()">
+		<div class="cont">
+			
+		</div>
+		<div class="cont">
+			<div class="text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nostrum, ullam accusamus.
+				<br>
+				HOVER OVER_ME
+			</div>
+		</div>
+	</div>
+			
+	<script>
+		var conts = document.querySelectorAll('.cont');
+		console.log(conts);
+		let index = 0;
+		conts[index].style.left = '100%';
+
+		function play(){
+			conts[1].style.background = 'transparent';
+			conts[index].style.left= "0";
+			conts[index].style.background="black";
+			conts[1].style.color= "#fff";
+			console.log('play');
+		}
+
+		function revert(){
+			conts[1].style.background = 'rgba(200,200,200,0.5)';
+			conts[index].style.left= "100%";
+			conts[index].style.background="white";
+			conts[1].style.color= "black";
+			console.log('revert');
+		}
+
+		
+	</script>
+
+</body>
+
+</html>
